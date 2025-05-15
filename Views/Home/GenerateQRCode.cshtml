@@ -1,0 +1,158 @@
+@{
+    ViewData["Title"] = "Scan QR Code";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #4cc9f0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .qr-container {
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .qr-container:hover {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .qr-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .qr-subtitle {
+            color: #6c757d;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .qr-code-box {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 0 auto 30px;
+            display: inline-block;
+            border: 1px dashed #dee2e6;
+        }
+
+        .qr-instructions {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .qr-instructions ol {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .qr-instructions li {
+            margin-bottom: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            min-width: 180px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .no-qr-message {
+            color: #dc3545;
+            background: #f8d7da;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="qr-container">
+        <h1 class="qr-title">Two-Factor Authentication Setup</h1>
+        <p class="qr-subtitle">Scan the QR code with Google Authenticator</p>
+
+        @if (ViewBag.QrCodeSvg != null)
+        {
+            <div class="qr-code-box">
+                @Html.Raw(ViewBag.QrCodeSvg)
+            </div>
+
+            <div class="qr-instructions">
+                <h5>How to set up:</h5>
+                <ol>
+                    <li>Open Google Authenticator on your phone</li>
+                    <li>Tap the "+" icon and select "Scan a QR code"</li>
+                    <li>Point your camera at the QR code above</li>
+                    <li>Enter the 6-digit code from the app to verify</li>
+                </ol>
+            </div>
+        }
+        else
+        {
+            <div class="no-qr-message">
+                <p>No QR Code found. Please try again.</p>
+            </div>
+        }
+
+        <a class="btn btn-primary" asp-action="Verify">Proceed to Verification</a>
+
+        <div style="margin-top: 20px; font-size: 14px; color: #6c757d;">
+            Having trouble? <a href="#" style="color: var(--primary-color);">Get help</a>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

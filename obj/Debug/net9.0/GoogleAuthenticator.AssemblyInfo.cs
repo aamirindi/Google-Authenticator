@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GoogleAuthenticator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3300b9cf7f00ce13ec498587190371556653be0")]
 [assembly: System.Reflection.AssemblyProductAttribute("GoogleAuthenticator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GoogleAuthenticator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

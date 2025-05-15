@@ -99,3 +99,4 @@
 /Users/asifaindi/aamir/GoogleAuthenticator/bin/Debug/net9.0/QRCoder.dll
 /Users/asifaindi/aamir/GoogleAuthenticator/obj/Debug/net9.0/GoogleAuthenticator.csproj.AssemblyReference.cache
 /Users/asifaindi/aamir/GoogleAuthenticator/obj/Debug/net9.0/GoogleAu.008C25B9.Up2Date
+/Users/asifaindi/aamir/GoogleAuthenticator/obj/Debug/net9.0/GoogleAuthenticator.sourcelink.json

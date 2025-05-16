@@ -10,7 +10,16 @@ This repository contains a simple implementation of **Google Authenticator-based
 
 ## 📽️ Demo Video
 
-A full walkthrough video of the implementation will be uploaded soon. Stay tuned!
+**▶️ [Watch on YouTube](https://youtu.be/DvQBzD0tqRk?si=K983x7FYNRQcbCv_)**
+
+This video provides a step-by-step walkthrough of integrating **Google Authenticator** into an **ASP.NET Core MVC** application using the `Otp.NET` and `QRCoder` libraries. It covers:
+
+- Setting up and configuring the required NuGet packages  
+- Generating QR codes to scan with the Google Authenticator app  
+- Creating and validating Time-based One-Time Passwords (TOTP)  
+- Securing user logins with Two-Factor Authentication (2FA)
+
+Ideal for developers looking to add an extra layer of security to their ASP.NET Core projects using a clean and minimal implementation.
 
 ## 🛠️ Features
 
@@ -33,3 +42,5 @@ A full walkthrough video of the implementation will be uploaded soon. Stay tuned
 git clone https://github.com/aamirindi/Google-Authenticator.git
 cd Google-Authenticator
 dotnet watch run
+
+
